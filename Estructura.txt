@@ -1,0 +1,11 @@
+Estructura
+
+Estilos
+- En public van los estilos generales del template
+- Se importan en el public/index.html
+- Los estilos especificos van en src/styles
+
+Componentes
+- Hay components y pages
+- Las pages son las que se acceden desde el router
+- Los componentes pueden ser contenedores y contenidos

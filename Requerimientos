@@ -1,0 +1,50 @@
+Diego Grnja Limpieza
+
+Lado del cliente
+Condiciones
+1. Solo pueden ver el precio las personas logueadas
+2. Para login:
+- Nombre y apellido
+- Cuit *
+- Direccion
+- Localidad
+- Telefono
+- Mail
+- Condicion de IVA
+3. Buscador
+4. Menu: Productos, Ofertas, Nuevos productos, Sobre DG Limpieza, Contacto
+5. Productos
+- Titulo
+- Descripcion
+- Categoria
+- Precio (Abajo: unitario sin iva)
+- Foto
+6. Ofertas: Productos que tengan marcada la opcion: En oferta
+7. Nuevos productos: Productos que tengan marcada la opcion: Nuevo
+8. Sobre: Descripcion de la empresa
+9. Contacto: Nombre completo, telefono, mail, ubicacion, condicion frente al iva.
+10. Footer: Envios sin cargo, fb, ig, tel y mail.
+11. Camino normal
+a. Login
+b. Se puede ver los precios
+c. Se pone la cantidad y click en comprar
+d. Se va al carrito, le muestra los productos, cantidades, precios unitarios y precio total 
+e. El cliente elige el metodo de pago y el cliente pone finalizar compra (Si no alcanza la compra minima se le avisa y no le permite)
+f. Segun metodo de pago
+- Contado efectivo: mismo precio
+- TC, TD, MP, Transferencia: se le suma IVA
+El cliente pone confirmar (o cancelar). Se muestra el siguiente mensaje: Su pedido ha sido registrado. Nos contactaremos a la brevedad para coordinar la entrega. Muchas gracias por elegirnos
+h. Si el cliente sale del sistema sin confirmar la compra, el carrito se guarda igualmente y cuando vuelve a entrar tiene los productos cargados.
+
+Lado de administracion
+1. ABM productos
+2. ABM categorias
+3. Compra minima
+4. Ver todos los datos del cliente y un historial de sus compras
+5. Ver los pedidos pendientes
+6. Marcar como entregados/cancelados los pedidos
+
+2da Etapa:
+- Mailing
+- Notificaciones
+- Una vez que se entregó el pedido se le puede preguntar que le parecion la atencion, el producto, etc
