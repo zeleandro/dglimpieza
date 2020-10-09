@@ -1,12 +1,18 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux'
+// import { connect } from 'react-redux'
+import { Link } from 'react-router-dom';
+import { addProduct } from '../../redux'
 
-export default function ListaItem(props){
-    return(
+function ListaItem(props) {
+    const [number, setNumber] = useState(1)
+    const products = useSelector(state => state.products)
+    const dispatch = useDispatch()
+    return (
         <div className="col-lg-6 col-md-12 col-xl-4" >
-			<div className="card card_lista overflow-hidden" >
-				<div className="item-card2-img"  >
-				<div className="arrow-ribbon bg-primary">{props.price}</div>			
+            <div className="card card_lista overflow-hidden" >
+                <div className="item-card2-img"  >
+                    <div className="arrow-ribbon bg-primary">{props.price}</div>
                     <img src={props.image} alt="img" className="cover-image" />
                 </div>
                 <div className="item-card7-overlaytext">
@@ -16,7 +22,9 @@ export default function ListaItem(props){
                 <div className="card-body">
                     <div className="item-card2">
                         <div className="item-card2-desc">
-                            <p className="mb-0"><h4>{props.title}</h4></p>
+                            <Link className="btn btn-white btn-block" to={{
+                                pathname: `/detalle/${props.id}`,
+                            }}>{props.title}</Link>
                             <Link to={{
                                 pathname: `/categoria/${props.category}`,
                             }}><h6><span class="badge badge-secondary">{props.category}</span></h6></Link>
@@ -24,17 +32,36 @@ export default function ListaItem(props){
                         </div>
                     </div>
                 </div>
-
                 <div className="card-body">
-                <Link className="btn btn-white btn-block" to={{
-                    pathname: `/detalle/${props.id}`,
-                    state: {
-                    fromNotifications: true
-                    }
-                }}>Ver Detalle</Link> 
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Cantidad" aria-label="Cantidad" aria-describedby="button-addon2"
+                        value={number} onChange={e => setNumber(parseInt(e.target.value))}></input>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2" 
+                            onClick={() => dispatch(addProduct([{id: props.id, cant: number}]))}>Comprar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     )
-
 }
+
+export default ListaItem
+
+// const mapStateToProps = state => {
+//     return {
+//         productsCount: state.productsCount
+//     }
+// }
+
+// const matchDispatchToProps = dispatch => {
+//     return {
+//         addProduct: () => dispatch(addProduct())
+//     }
+// }
+
+// export default connect(
+//     mapStateToProps, 
+//     matchDispatchToProps
+//     )(ListaItem)

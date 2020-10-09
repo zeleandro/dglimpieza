@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 
 export default function DetalleCard(props) {
 	const item = props.item;
-	let precio = parseFloat(props.price);
+	let price = parseFloat(props.price);
 
 	return (
 		<React.Fragment>
