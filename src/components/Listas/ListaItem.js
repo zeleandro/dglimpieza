@@ -38,7 +38,7 @@ function ListaItem(props) {
                         value={number} onChange={e => setNumber(parseInt(e.target.value))}></input>
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button" id="button-addon2" 
-                            onClick={() => dispatch(addProduct([{id: props.id, cant: number}]))}>Comprar</button>
+                            onClick={() => dispatch(addProduct([{id: props.id, title: props.title, price: props.price, cant: number}]))}>Comprar</button>
                         </div>
                     </div>
                 </div>

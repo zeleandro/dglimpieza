@@ -22,12 +22,28 @@ const Navbar = (props) => (
 							<li aria-haspopup="true">
 								<Link to="/home" >
 									Productos
-                                    </Link>
+                                </Link>
 							</li>
-							<li aria-haspopup="true"><a href="ofertas">Ofertas </a></li>
-							<li aria-haspopup="true"><a href="novedades">Novedades </a></li>
-							<li aria-haspopup="true"><a href="about">Sobre DG </a></li>
-							<li aria-haspopup="true"><a href="contact"> Contacto <span className="wsarrow"></span></a></li>
+							<li aria-haspopup="true">
+								<Link to="/ofertas" >
+									Ofertas
+                                </Link>
+							</li>
+							<li aria-haspopup="true">
+								<Link to="/novedades" >
+									Novedades
+                                </Link>
+							</li>
+							<li aria-haspopup="true">
+								<Link to="/about" >
+									About DG
+                                </Link>
+							</li>
+							<li aria-haspopup="true">
+								<Link to="/contact" >
+									Contacto
+                                </Link>
+							</li>
 						</ul>
 					</nav>
 				</div>

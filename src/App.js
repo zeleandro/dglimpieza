@@ -11,6 +11,7 @@ import DetalleArticulo from './components/Detalle/DetalleContainer';
 import Filtros from './components/Listas/Filtros'
 import NotFound from './components/NotFound';
 import About from './pages/About';
+import Cart from './pages/Cart';
 import Login from './components/Auth/Login';
 import { UserContextProvider } from "./components/Context/UserContext";
 
@@ -33,6 +34,7 @@ function App() {
                   </Route>
                   <Route exact path="/home" component={Home} />
                   <Route exact path="/about" component={() => <About nombre={'Diego Grnja'} empresa={'DG Limpieza'} />} />
+                  <Route exact path="/novedades" component={Cart} />
                   <Route exact path="/detalle/:id" component={DetalleArticulo} />
                   <Route exact path="/search" render={(props) => <Buscador {...props} />} />
                   <Route exact path="/categoria/:categoria" component={ListaCategoria} />

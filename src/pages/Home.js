@@ -4,6 +4,8 @@ import ListaArticulo from '../components/Listas/ListaArticulo';
 import PageLoading from '../components/PageLoading';
 import PageError from '../components/PageError';
 import Banner from '../components/Banner';
+import { Provider } from 'react-redux';
+import store from './../redux/store';
 
 class Home extends React.Component {
     constructor(props) {
@@ -78,32 +80,36 @@ class Home extends React.Component {
             );
         }
 
-        if(this.state.redirect){
+        if (this.state.redirect) {
             return (
-              <Redirect
-                to={{
-                pathname: "/search",
-                state: { articulos: this.state.data,
-                          palabra: this.state.buscadorValue }
-              }}
-            />
+                <Redirect
+                    to={{
+                        pathname: "/search",
+                        state: {
+                            articulos: this.state.data,
+                            palabra: this.state.buscadorValue
+                        }
+                    }}
+                />
             );
-          }
+        }
 
         return (
-            <React.Fragment>
-                <Fragment>
-                    <Banner
-                        size={this.state.data.length}
-                        buscadorValue={this.state.buscadorValue}
-                        onChange={this.handleChange}
-                        onSubmit={this.handleSubmit}
-                    >
-                    </Banner>
-                    <ListaArticulo articulos={this.state.data} titulo="Artículos">
-                    </ListaArticulo>
-                </Fragment>
-            </React.Fragment>
+            <Provider store={store}>
+                <React.Fragment>
+                    <Fragment>
+                        <Banner
+                            size={this.state.data.length}
+                            buscadorValue={this.state.buscadorValue}
+                            onChange={this.handleChange}
+                            onSubmit={this.handleSubmit}
+                        >
+                        </Banner>
+                        <ListaArticulo articulos={this.state.data} titulo="Artículos">
+                        </ListaArticulo>
+                    </Fragment>
+                </React.Fragment>
+            </Provider>
         );
     }
 
