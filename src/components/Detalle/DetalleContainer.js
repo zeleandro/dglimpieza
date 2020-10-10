@@ -65,9 +65,9 @@ class DetalleContainer extends React.Component {
 									price={this.state.price}
 								>
 								</DetalleCard>
-								<DetalleItem item={this.state.data} 
+								{/* <DetalleItem item={this.state.data} 
 								>
-								</DetalleItem>
+								</DetalleItem> */}
 							</div>
 						</div>
 					</div>

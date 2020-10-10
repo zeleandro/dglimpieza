@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-// import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { addProduct } from '../../redux'
+import { ToastContainer, toast } from 'react-toastify';
 
 function ListaItem(props) {
-    const [number, setNumber] = useState(1)
+    const [cantidad, setNumber] = useState(1)
     const products = useSelector(state => state.products)
     const dispatch = useDispatch()
+
+    const handleClick = () => {
+        dispatch(addProduct([{id: props.id, title: props.title, price: props.price, cant: cantidad}]))
+		toast.success("Se ha agregado el producto al carrito")
+    }
+    
     return (
         <div className="col-lg-6 col-md-12 col-xl-4" >
             <div className="card card_lista overflow-hidden" >
@@ -35,33 +41,17 @@ function ListaItem(props) {
                 <div className="card-body">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Cantidad" aria-label="Cantidad" aria-describedby="button-addon2"
-                        value={number} onChange={e => setNumber(parseInt(e.target.value))}></input>
+                        value={cantidad} onChange={e => setNumber(parseInt(e.target.value))}></input>
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button" id="button-addon2" 
-                            onClick={() => dispatch(addProduct([{id: props.id, title: props.title, price: props.price, cant: number}]))}>Comprar</button>
+                            onClick={handleClick}>Comprar</button>
                         </div>
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     )
 }
 
 export default ListaItem
-
-// const mapStateToProps = state => {
-//     return {
-//         productsCount: state.productsCount
-//     }
-// }
-
-// const matchDispatchToProps = dispatch => {
-//     return {
-//         addProduct: () => dispatch(addProduct())
-//     }
-// }
-
-// export default connect(
-//     mapStateToProps, 
-//     matchDispatchToProps
-//     )(ListaItem)

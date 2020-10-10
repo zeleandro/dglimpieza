@@ -2,7 +2,6 @@ import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import './style/navbar.css'
 
-
 const Navbar = (props) => (
 	<React.Fragment>
 		<div className={`horizontal-header clearfix sticky trelu${props.movil}`}>

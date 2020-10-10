@@ -43,13 +43,16 @@ export default function Header() {
 					<div className="col-xl-4 col-lg-4 col-sm-8 col-5">
 						<div className="top-bar-right">
 							{isLogged
-								? <ul className="custom"><li><a onClick={handleClick} className="text-dark"><i className="fa fa-sign-in mr-1"></i> <span>Logout</span></a></li>
+								? <ul className="custom">
 									<li>
+										<a onClick={handleClick} className="text-dark"><i className="fa fa-sign-in mr-1"></i> <span>Logout</span></a>
 										<Link to="/home" className="text-dark"><i className="fa fa-user mr-1"></i> <span>{token}</span></Link>
-									</li></ul>
+									</li>
+								</ul>
 								: <ul className="custom"><li><Link to="/login" className="text-dark"><i className="fa fa-user mr-1"></i> <span>Login</span></Link>
 								</li></ul>
 							}
+							<Link to="/cart" className="text-dark"><i class="fas fa-shopping-cart"></i><span>Carrito</span></Link>
 						</div>
 					</div>
 				</div>

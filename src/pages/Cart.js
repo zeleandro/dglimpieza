@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { useSelector, useDispatch } from 'react-redux'
 import store from './../redux/store';
 import { addProduct } from './../redux'
-import CartContainer from '../components/Listas/CartContainer'
+import CartContainer from '../components/Cart/CartContainer'
 import PageLoading from '../components/PageLoading';
 import PageError from '../components/PageError';
 
@@ -37,11 +37,6 @@ function Cart(props) {
 
     return (
         <Provider store={store}>
-            {/* <pre>
-                {JSON.stringify(products)}
-                {console.log(products)}
-            </pre> */}
-            {/* <button onClick={() => dispatch(addProduct([{ id: 1, cant: 2 }]))}>Add Product</button> */}
             <CartContainer />
         </Provider>
     )

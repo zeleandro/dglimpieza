@@ -34,7 +34,7 @@ function App() {
                   </Route>
                   <Route exact path="/home" component={Home} />
                   <Route exact path="/about" component={() => <About nombre={'Diego Grnja'} empresa={'DG Limpieza'} />} />
-                  <Route exact path="/novedades" component={Cart} />
+                  <Route exact path="/cart" component={Cart} />
                   <Route exact path="/detalle/:id" component={DetalleArticulo} />
                   <Route exact path="/search" render={(props) => <Buscador {...props} />} />
                   <Route exact path="/categoria/:categoria" component={ListaCategoria} />

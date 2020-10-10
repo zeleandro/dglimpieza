@@ -75,15 +75,15 @@ class CartContainer extends React.Component {
                                         <tbody>
                                             <tr>
                                                 <td>Subtotal</td>
-                                                <td class="text-right">$792.00</td>
+                                                <td class="text-right">${this.props.total}</td>
                                             </tr>
                                             <tr>
                                                 <td><span>Total</span></td>
-                                                <td class="text-right text-muted"><span>$792.00</span></td>
+                                                <td class="text-right text-muted"><span>${this.props.total}</span></td>
                                             </tr>
                                             <tr>
                                                 <td><span>Total de la Orden</span></td>
-                                                <td><h2 class="price text-right mb-0">$792.00</h2></td>
+                                                <td><h2 class="price text-right mb-0">${this.props.total}</h2></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -106,7 +106,8 @@ class CartContainer extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        products: state.products
+        products: state.products,
+        total: state.total
     }
 }
 
