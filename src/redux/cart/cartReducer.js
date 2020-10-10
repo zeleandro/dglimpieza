@@ -16,7 +16,8 @@ const cartReducer = (state = initialState, action) => {
                 return {
                     ... state,
                     products: productsCopy,
-                    total: total.toFixed(2)
+                    total: total.toFixed(2),
+                    cantidad: productsCopy.length
                 }
             } else {
                 const total = state.products.reduce((accum, item) => 
@@ -25,7 +26,8 @@ const cartReducer = (state = initialState, action) => {
                 return {
                     ... state,
                     products: [... state.products, ... action.payload],
-                    total: total.toFixed(2)
+                    total: total.toFixed(2),
+                    cantidad: state.products.length + 1
                 }
             }
         }
@@ -40,7 +42,8 @@ const cartReducer = (state = initialState, action) => {
                 return {
                     ... state,
                     products: productsCopy,
-                    total: total.toFixed(2)
+                    total: total.toFixed(2),
+                    cantidad: productsCopy.length
                 }
             }
         }
@@ -54,7 +57,8 @@ const cartReducer = (state = initialState, action) => {
                 return {
                     ... state,
                     products: productsCopy,
-                    total: total.toFixed(2)
+                    total: total.toFixed(2),
+                    cantidad: productsCopy.length
                 }
             }
         }

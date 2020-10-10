@@ -23,7 +23,7 @@ function Footer() {
 								<ul className="list-unstyled mb-0">
 									<li>Dirección: Orquídeas 385</li>
 									<li>Teléfono: +54 362 4223010</li>
-									<li>Mail: diegogrnja@gmail.com</li>
+									<li>Mail: diego_grnja@hotmail.com</li>
 								</ul>
 							</div>
 							<div className="col-lg-3 col-md-12">

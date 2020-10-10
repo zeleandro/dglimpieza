@@ -5,3 +5,30 @@
 #sticky-wrapper{
     height: 88px;
 }
+
+#combo{
+    position: absolute; 
+    will-change: transform; 
+    top: 0px; 
+    left: 0px; 
+    transform: translate3d(-81px, 19px, 0px);
+}
+
+.menu-activo{
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    visibility: visible;
+    z-index: 1000;
+    top: 0;
+    height: 100% !important;
+}
+
+.dos-activo{
+    opacity: 1;
+    visibility: visible;
+}
+
+.tres-activo{
+    transition: all 0.25s ease-in-out;
+    margin-left: 0 !important;
+}

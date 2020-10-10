@@ -12,6 +12,7 @@ import Filtros from './components/Listas/Filtros'
 import NotFound from './components/NotFound';
 import About from './pages/About';
 import Cart from './pages/Cart';
+import Confirm from './pages/Confirm'
 import Login from './components/Auth/Login';
 import { UserContextProvider } from "./components/Context/UserContext";
 
@@ -39,6 +40,7 @@ function App() {
                   <Route exact path="/search" render={(props) => <Buscador {...props} />} />
                   <Route exact path="/categoria/:categoria" component={ListaCategoria} />
                   <Route exact path="/login" component={Login} />
+                  <Route exact path="/confirm" component={Confirm} />
                   <Route component={NotFound} />
                 </Switch>
                 {/* <Filtros /> */}
