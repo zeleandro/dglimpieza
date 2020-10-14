@@ -20,14 +20,34 @@ import { UserContextProvider } from "./components/Context/UserContext";
 const Home = React.lazy(() => import("./pages/Home"));
 
 function App() {
+  const [isSticky, setSticky] = useState(false);
+  const ref = useRef(null);
+  const handleScroll = () => {
+    if (ref.current) {
+      setSticky(ref.current.getBoundingClientRect().top <= 0);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', () => handleScroll);
+    };
+  }, []);
+  
   return (
     <UserContextProvider>
       <Provider store={store}>
         <div className="App">
           <Suspense fallback={null}>
             <BrowserRouter>
-              <Header />
-              <NavBar />
+              <div className="header-main">
+                <Header />
+                <div className={`sticky-wrapper${isSticky ? ' is-sticky' : ''}`} ref={ref}>
+                    <NavBar estilo={`${isSticky ? ' stiki' : ''}`} movil={`${isSticky ? ' sticky-pin' : ''}`}/>
+                </div>
+              </div>
               <Layout>
                 <Switch>
                   <Route exact path="/">

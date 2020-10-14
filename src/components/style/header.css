@@ -30,5 +30,6 @@
 
 .tres-activo{
     transition: all 0.25s ease-in-out;
-    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-left: auto !important;
 }

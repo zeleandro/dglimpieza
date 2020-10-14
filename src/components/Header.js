@@ -24,6 +24,12 @@ export default function Header() {
 		  logoutToaster();
 	}
 
+	const [isMenu, setMenu] = useState(false);
+
+	const handleMenu = e =>{
+		isMenu ? setMenu(false):setMenu(true)
+	}
+
 	return (
 		<div className="top-bar">
 			<div className="container">
